@@ -1,0 +1,135 @@
+.singleProductContainer {
+    padding: 20px;
+
+    .singleProductBox {
+        display: flex;
+        gap: 40px;
+
+        .leftSide {
+            display: flex;
+            gap: 20px;
+
+            .imgScroll {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .scrollImg {
+                    width: 140px;
+                    height: 160px;
+                    object-fit: cover;
+                    border: 4px solid black;
+                    border-radius: 10px;
+                }
+
+                .scrollImg.active{
+                    border: 4px solid blue;
+                }
+            }
+
+            .imgView {
+                img {
+                    width: 500px;
+                    height: 600px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        .rightSide {
+            font-family: 'OCR A';
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                min-width: 40px;
+                color: white;
+                background: rgb(20, 20, 20);
+                border-radius: 10px;
+                border: none;
+                font-family: 'OCR A';
+                font-size: 14px;
+            }
+
+            button:hover {
+                background-color: rgb(30, 30, 30);
+            }
+
+            .productName {
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            .productPrice {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .priceNote {
+                font-size: 12px;
+                margin-top: -10px;
+            }
+
+            .productQuantity{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .selectSize {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .selectSizeHeading {
+                    font-size: 26px;
+                    font-weight: bold;
+                }
+
+                .sizeButtons {
+                    display: flex;
+                    gap: 20px;
+
+                    
+                }
+            }
+
+            .actionButtons {
+                display: flex;
+                gap: 20px;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 20px;
+                    padding: 10px 16px;
+                    background: rgb(20, 20, 20);
+                    border-radius: 10px;
+                    border: none;
+                    color: white;
+                    font-family: 'OCR A';
+                    font-size: 14px;
+                    cursor: pointer;
+
+                    img {
+                        width: 18px;
+                        height: 18px;
+                        object-fit: cover;
+                        filter: invert(1);
+                    }
+                }
+
+                button:hover {
+                    background-color: rgb(30, 30, 30);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.footerContainer{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'OCR A';
+    background-color: rgb(10, 10, 10);
+
+    .footerBox{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .footerTop{
+            width: 100%;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+
+            .topLeft{
+                flex: 40%;
+                .menhewLogo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+
+                    .link{
+                        text-decoration: none;
+                        color: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        
+                        img {
+                            width: 35px;
+                            height: 35px;
+                            filter: invert(1);
+                        }
+            
+                        span {
+                            font-family:Georgia, 'Times New Roman', Times, serif ;
+                            font-size: 28px
+                        }
+                    }
+                }
+            }
+
+            .topRight{
+                flex: 60%;
+                text-align: right;
+            }
+
+        }
+
+        .footerBottom{
+            width: 100%;
+            .navLinks{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                .link{
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+
+            .copyrightDetails{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            
+
+                .cdRight{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 40px;
+                    
+                    .link{
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

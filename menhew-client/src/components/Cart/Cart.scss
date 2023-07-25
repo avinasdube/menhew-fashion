@@ -1,0 +1,91 @@
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'OCR A';
+    z-index: +10;
+
+    .productCardsBox{
+        display: flex;
+        flex-direction: column;
+        height: 385px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        gap: 10px;
+
+        .productCard {
+            background-color: black;
+            height: fit-content;
+            display: flex;
+            gap: 10px;
+            border-radius: 10px;
+            padding: 10px;
+    
+            .cartLeft {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+    
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 4px;
+                }
+            }
+
+            .cartRight {
+                flex: 4;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    }
+
+    .productCardsBox::-webkit-scrollbar{
+        width: 0;
+    }
+
+    
+
+    .checkoutBox{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: black;
+        padding: 10px 10px;
+        border-radius: 6px;
+
+        .totalPriceCount{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .checkoutButton{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                min-width: 40px;
+                color: white;
+                background: rgb(20, 20, 20);
+                border-radius: 6px;
+                border: none;
+                font-family: 'OCR A';
+                font-size: 14px;
+            }
+
+            button:hover {
+                background-color: rgb(30, 30, 30);
+            }
+        }
+    }
+}

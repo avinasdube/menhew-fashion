@@ -1,0 +1,18 @@
+
+$primary : #000000;
+$secondary : #F9EAD9;
+$tertiary : #DE2105;
+
+body{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+
+  .app{
+    height: auto;
+    background-color: $primary;
+    color: $secondary;
+    font-family: 'system-ui';
+  }
+}
+
