@@ -12,7 +12,7 @@ const Home = () => {
           <div className="middleHead">
             Featured Collection
           </div>
-          <FeaturedProducts />
+          <FeaturedProducts type="featured"/>
         </div>
 
         <div className="quote1">
@@ -20,7 +20,7 @@ const Home = () => {
         </div>
 
         <div className='checkThisOut'>
-          <CheckThisOut />
+          <CheckThisOut type="checkthisout"/>
         </div>
       </main>
     </div>

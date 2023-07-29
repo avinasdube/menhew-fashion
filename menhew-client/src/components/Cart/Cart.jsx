@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Cart.scss';
 
 import avinas from '../../assets/images/a1.jpeg';
-import arrowIcon from '../../assets/icons/arrowdown.png';
 
 const Cart = () => {
-
-  const [dropdown, setDropdown] = useState(false);
-
-  function dropdownToggle() {
-    dropdown === true ? setDropdown(false) : setDropdown(true);
-  }
 
   return (
     <div className="cartContainer">
