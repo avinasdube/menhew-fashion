@@ -1,38 +1,22 @@
 import React from 'react';
 import './MenProducts.scss';
 
-import men from '../../assets/images/a4.jpeg';
 import ProductCard from '../ProductCard/ProductCard';
+import useFetch from '../../hooks/useFetch';
 
 const MenProducts = ({category, sort}) => {
 
-    const menProducts = [
-        {
-            id: 1,
-            img: men,
-            productName: 'Printed T-shirt',
-            productPrice: '499',
-        },
-        {
-            id: 2,
-            img: men,
-            productName: 'Black Jeans',
-            productPrice: '999',
-        },
-        {
-            id: 3,
-            img: men,
-            productName: 'Fancy Trackpant',
-            productPrice: '699',
-        }
-    ];
+    const { data, isLoading, isError } = useFetch(`/products?populate=*&[filters][categories][title][$eq]=${category}`);
 
     return (
         <div className="menProductContainer">
-            <div className="menProductsBox" key={menProducts.id}>
-                {
-                    menProducts?.map(product =>(
-                        <ProductCard product={product} category={category} key={product.id}/>
+            <div className="menProductsBox" key={data?.attributes?.key}>
+                {isError 
+                   ? "Something went wrong !"
+                   : isLoading
+                   ? "loading"
+                   : data?.map(product =>(
+                        <ProductCard product={product} category={category} key={data?.attributes?.key}/>
                     ))
                 }
             </div>

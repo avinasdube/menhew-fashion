@@ -3,8 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
-    z-index: +10;
+    z-index: +200;
 
     .navbarLeft {
         padding: 20px;
@@ -53,7 +52,7 @@
 
     .navbarRight {
         display: flex;
-        gap: 20px;
+        gap: 40px;
         padding: 20px;
 
         .searchBar{

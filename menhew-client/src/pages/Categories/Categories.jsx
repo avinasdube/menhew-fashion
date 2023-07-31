@@ -4,6 +4,7 @@ import './Categories.scss';
 import arrowIcon from '../../assets/icons/arrowdown.png';
 import MenProducts from '../../components/MenProducts/MenProducts';
 import KidsProducts from '../../components/KidsProducts/KidsProducts';
+import Navbar from '../../components/NavBar/Navbar';
 
 const Categories = () => {
 
@@ -36,6 +37,7 @@ const Categories = () => {
   return (
     <div className="categoriesContainer">
       <header>
+        <Navbar />
         <div className="headerText">
           <div className="textLeft">
             THE ULTIMATE <br></br>

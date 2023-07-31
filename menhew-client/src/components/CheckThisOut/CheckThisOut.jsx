@@ -1,44 +1,31 @@
 import React from 'react';
 import './CheckThisOut.scss';
 
-import i1 from '../../assets/images/i2.jpg';
-import s1 from '../../assets/images/s2.jpg';
-import d1 from '../../assets/images/d1.jpg';
-
 import upright from '../../assets/icons/upright.png';
+import useFetch from '../../hooks/useFetch';
+import { Link } from 'react-router-dom';
 
-const CheckThisOut = () => {
+const CheckThisOut = ({ type }) => {
 
-    const checkThisOutProducts = [
-        {
-            id: 1,
-            img: i1,
-            uprightSign: upright,
-            tag: 'Check This Out !'
-        },
-        {
-            id: 2,
-            img: s1,
-            uprightSign: upright,
-            tag: 'Check This Out !'
-        },
-        {
-            id: 3,
-            img: d1,
-            uprightSign: upright,
-            tag: 'Check This Out !'
-        }
-    ]
+
+    const { data, isLoading, isError } = useFetch(`/products?populate=*&[filters][type][$eq]=${type}`);
+
     return (
         <div className="checkThisOutContainer">
             <div className="checkThisOutCards">
-                {checkThisOutProducts.map(product => (
-                    <div className="checkThisOutCard" key={product.id}>
-                        <img src={product.img} alt=''></img>
-                        <button className="uprightSign"><img src={product.uprightSign} alt=''></img></button>
-                        <div className="tag">{product.tag}</div>
-                    </div>
-                ))}
+                {isError
+                    ? "Something went wrong"
+                    : isLoading
+                        ? "Loading"
+                        : data?.map(product => (
+                            <div className="checkThisOutCard" key={product.attributes.productId}>
+                                <img src={process.env.REACT_APP_UPLOAD_URL + product.attributes?.img?.data?.attributes?.url} alt=''></img>
+                                <Link className='link' to={`/categories/${product.attributes.categories.data[0].attributes.title}/product/${product?.id}`}>
+                                    <button className="uprightSign"><img src={upright} alt=''></img></button>
+                                </Link>
+                                <div className="tag">Check This Out</div>
+                            </div>
+                        ))}
             </div>
         </div>
     )

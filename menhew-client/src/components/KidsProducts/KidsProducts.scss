@@ -3,8 +3,9 @@
 
     .kidsProductsBox{
         display: flex;
-        flex-direction: row;
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
 
         .productCard{
             background-color: rgb(20, 20, 20);

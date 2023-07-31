@@ -10,7 +10,6 @@ import Home from './pages/Home/Home';
 import Categories from "./pages/Categories/Categories";
 import Favourites from "./pages/Favourites/Favourites";
 
-import Navbar from './components/NavBar/Navbar';
 import Footer from './components/Footer/Footer';
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
@@ -20,7 +19,6 @@ import Product from "./pages/Product/Product";
 const Layout = () => {
   return (
     <>
-      <Navbar />
       <Outlet />
       <Footer />
     </>

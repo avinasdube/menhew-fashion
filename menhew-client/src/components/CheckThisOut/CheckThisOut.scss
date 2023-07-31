@@ -1,3 +1,5 @@
+$primaryfont: 'Times New Roman', Times, serif;
+
 .checkThisOutContainer{
 
     .checkThisOutCards{
@@ -5,6 +7,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+        padding: 20px;
 
         .checkThisOutCard{
             position: relative;
@@ -22,7 +25,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: black;
+                background-color: #0a160f;
+                border: 2px solid #0a160f;
                 border-radius: 100%;
                 position: absolute;
                 cursor: pointer;
@@ -41,11 +45,12 @@
                 font-weight: bold;
                 top: 10px;
                 left: 10px;
-                color: black;
-                font-family: 'OCR A';
+                color: white;
+                font-family: $primaryfont;
                 font-size: 30px;
                 word-wrap: break-word;
                 width: 100px;
+                text-shadow: 4px 3px #0a160f;
             }
         }
     }

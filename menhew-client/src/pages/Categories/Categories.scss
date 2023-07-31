@@ -1,19 +1,17 @@
 .categoriesContainer{
 
     header{
-        height: 400px;
+        height: 500px;
         background: url('../../assets/images/sample.jpg');
         background-size: cover;
-        padding: 20px;
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
         gap: 20px;
     
         .headerText{
             font-size: 5vw;
             font-family: 'OCR A';
+            text-shadow: 10px 10px #142c1e;
             display: flex;
             align-items: center;
             justify-content: space-evenly;

@@ -3,8 +3,9 @@
 
     .menProductsBox {
         display: flex;
-        flex-direction: row;
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
 
         .link {
             text-decoration: none;

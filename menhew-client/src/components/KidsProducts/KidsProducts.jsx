@@ -3,37 +3,21 @@ import './KidsProducts.scss';
 
 import kids from '../../assets/images/a1.jpeg';
 import ProductCard from '../ProductCard/ProductCard';
+import useFetch from '../../hooks/useFetch';
 
 const KidsProducts = ({ category, sort }) => {
 
-
-    const kidsProducts = [
-        {
-            id: 1,
-            img: kids,
-            productName: 'Yellow Dashed T-shirt',
-            productPrice: 'Rs. 499',
-        },
-        {
-            id: 2,
-            img: kids,
-            productName: 'Sports Trouser',
-            productPrice: 'Rs. 999',
-        },
-        {
-            id: 3,
-            img: kids,
-            productName: 'Denim Shirt',
-            productPrice: 'Rs. 699',
-        }
-    ];
+    const { data, isLoading, isError } = useFetch(`/products?populate=*&[filters][categories][title][$eq]=${category}`);
 
     return (
         <div className="kidsProductContainer">
-            <div className="kidsProductsBox" key={kidsProducts.id}>
-                {
-                    kidsProducts?.map(product => (
-                        <ProductCard product={product} category={category} key={product.id} />
+            <div className="kidsProductsBox" key={data?.attributes?.key}>
+                {isError 
+                   ? "Something went wrong !"
+                   : isLoading
+                   ? "loading"
+                   :  data?.map(product => (
+                        <ProductCard product={product} category={category} key={data?.attributes?.key} />
                     ))
                 }
             </div>

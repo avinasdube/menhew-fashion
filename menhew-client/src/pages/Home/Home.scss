@@ -1,32 +1,80 @@
-.homeContainer{
-    width: auto;
+$primaryfont: 'Times New Roman', Times, serif;
 
-    main{
-        padding: 20px;
+.homeContainer {
+    background-color: rgb(195, 195, 195);
 
-        .featuredProducts{
-            margin-top: 100px;
-            .middleHead{
-                text-align: center;
-                padding: 4px;
-                font-size: 40px;
-                font-weight: bold;
-                font-family: 'OCR A';
-            }
-        }
+    .homepageWelcome {
+        width: auto;
+        height: 800px;
+        background-image: url('../../assets/images/homepageImage.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
 
-        .quote1{
-            text-align: center;
-            font-size: 40px;
-            font-weight: bold;
-            font-family: 'OCR A';
-        }
-
-        .checkThisOut{
-            height: 420px;
+        .logoSection {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            .logo {
+                font-size: 200px;
+                font-weight: bold;
+                font-family: $primaryfont;
+                text-shadow: 14px 16px #0a160f;
+            }
+
+            .logoDes {
+                font-size: 45px;
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #0a160f;
+                padding: 0 15px;
+            }
         }
+    }
+
+    .featuredProducts {
+        width: auto;
+        background-image: url('../../assets/images/featback.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .middleHead {
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: $primaryfont;
+            text-shadow: 6px 5px #84650b;
+            background-color: black;
+
+            img {
+                filter: invert(1);
+                height: 30px;
+                width: 40px;
+            }
+        }
+    }
+
+    .quote1 {
+        text-align: center;
+        padding: 20px;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: $primaryfont;
+        text-shadow: 6px 5px #84650b;
+        background-color: black;
+
+        img {
+            filter: invert(1);
+            height: 30px;
+            width: 40px;
+        }
+    }
+
+    .checkThisOut {
+        height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
