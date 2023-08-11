@@ -5,10 +5,13 @@ import arrowIcon from '../../assets/icons/arrowdown.png';
 import MenProducts from '../../components/MenProducts/MenProducts';
 import KidsProducts from '../../components/KidsProducts/KidsProducts';
 import Navbar from '../../components/NavBar/Navbar';
+import AllProducts from '../../components/AllProducts/AllProducts';
 
 const Categories = () => {
 
-  const [category, setCategory] = useState("men");
+  // FUNCTION FOR SETTING CATEGORY
+
+  const [category, setCategory] = useState('');
 
   function menCategory() {
     setCategory("men");
@@ -18,21 +21,26 @@ const Categories = () => {
     setCategory("kids");
   }
 
+  // FUNCTION FOR SETTING DROPDOWN
+
   const [dropdown, setDropdown] = useState(false);
 
-  const dropdownToggle = ()=>{
+  const dropdownToggle = () => {
     dropdown === false ? setDropdown(true) : setDropdown(false);
   }
 
-  const[sortby, setSortBy] = useState("asc");
+  // FUNCTION FOR SORTING PRODUCTS
 
-  function sortAsc(){
+  const [sortby, setSortBy] = useState("asc");
+
+  function sortAsc() {
     setSortBy("asc");
   }
 
-  function sortDesc(){
+  function sortDesc() {
     setSortBy("desc")
   }
+
 
   return (
     <div className="categoriesContainer">
@@ -49,62 +57,19 @@ const Categories = () => {
           </div>
         </div>
         <div className="headerButtons">
-          <button onClick={() => kidsCategory()}>For Kids</button>
-          <button onClick={() => menCategory()}>For Men</button>
+          <button className={`catbutton ${category === "kids" ? 'active' : 'inactive'}`} onClick={() => kidsCategory()}>For Kids</button>
+          <button className={`catbutton ${category === "men" ? 'active' : 'inactive'}`} onClick={() => menCategory()}>For Men</button>
         </div>
-      </header>
+      </header >
 
       <main>
-        <div className="catHeading">{category === 'kids' ? 'For Kids' : 'For Men'}</div>
-        <div className="catOptions">
-          {category === 'kids' ?
-            <>
-              <div className='optionButtons'>
-                <input type='checkbox' id='tshirt' value={'tshirts'}></input>
-                <label htmlFor='tshirt'>T-Shirts</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='jeans' value={'jeans'}></input>
-                <label htmlFor='jeans'>Jeans</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='trousers' value={'trousers'}></input>
-                <label htmlFor='trousers'>Trousers</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='sports' value={'sports'}></input>
-                <label htmlFor='sports'>Sports</label>
-              </div>
-            </> 
-            
-            :
-
-            <>
-              <div className='optionButtons'>
-                <input type='checkbox' id='tshirt' value={'tshirts'}></input>
-                <label htmlFor='tshirt'>T-Shirts</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='jeans' value={'jeans'}></input>
-                <label htmlFor='jeans'>Jeans</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='trackpants'value={'trackpants'}></input>
-                <label htmlFor='trackpants'>Trackpants</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='kurtas' value={'kurtas'}></input>
-                <label htmlFor='kurtas'>Kurtas</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='shirts' value={'shirts'}></input>
-                <label htmlFor='shirts'>Shirts</label>
-              </div>
-              <div className='optionButtons'>
-                <input type='checkbox' id='formals' value={'formals'}></input>
-                <label htmlFor='formals'>Formals</label>
-              </div>
-            </>}
+        <div className="catHeading">
+          {category === 'kids'
+            ? 'Explore Fashion for Kids'
+            : category === 'men'
+              ? 'Explore Fashion for Men'
+              : 'Explore Fashion From Our Curated Collection of Quality Products'
+          }
         </div>
 
         <div className="filterOptions">
@@ -116,8 +81,8 @@ const Categories = () => {
             <div className={`sortByOptionsList ${dropdown === true ? 'active' : 'inactive'}`}>
               <div className="sortByScrollBox">
                 <ul>
-                  <option id='optn' onClick={() => sortAsc()}>Price: Low to High</option>
-                  <option id='optn' onClick={() => sortDesc()}>Price: High to Low</option>
+                  <option className={`option ${sortby === 'asc' ? 'active' : 'inactive'}`} id='optn' onClick={() => sortAsc()}>Price: Low to High</option>
+                  <option className={`option ${sortby === 'desc' ? 'active' : 'inactive'}`} id='optn' onClick={() => sortDesc()}>Price: High to Low</option>
                 </ul>
               </div>
             </div>
@@ -126,21 +91,24 @@ const Categories = () => {
 
         <div className="productLists">
           {
-            category === 'kids' ? 
+            category === 'kids'
+              ?
 
-            <>
-              <KidsProducts category={category} sort={sortby}/>
-            </>
+              <>
+                <KidsProducts category={category} sort={sortby}/>
+              </>
 
-            :
+              : category === 'men' ?
 
-            <>
-              <MenProducts category={category} sort={sortby}/>
-            </>
+                <>
+                  <MenProducts category={category} sort={sortby}/>
+                </>
+
+                : <AllProducts sort={sortby} />
           }
         </div>
       </main>
-    </div>
+    </div >
   )
 }
 

@@ -11,8 +11,11 @@ import avinas from '../../assets/images/av49.jpg';
 
 import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+    const products = useSelector(state => state.cart.products)
 
     const [dropdown, setDropdown] = useState(false);
 
@@ -49,7 +52,7 @@ const Navbar = () => {
                 <div className='cart'>
                     <div className={`cartDropdown ${dropdown === true ? 'active' : 'inactive'}`} onClick={dropdownToggle}>
                         <img src={cart} alt=''></img>
-                        <span>0</span>
+                        <span>{products.length}</span>
                     </div>
                     <div className={`cartDropdownBox ${dropdown === true ? 'active' : 'inactive'}`}>
                         <Cart />

@@ -1,63 +1,46 @@
 import React from 'react';
 import './Cart.scss';
 
-import avinas from '../../assets/images/a1.jpeg';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeItem, resetCart } from '../../redux/cartReducer';
 
 const Cart = () => {
+
+  const products = useSelector(state => state.cart.products)
+
+  const totalPrice = ()=>{
+    let total = 0;
+    products.forEach((item)=>(total += item.productQuantity * item.price));
+    return total.toFixed(2)
+  }
+
+  const dispatch = useDispatch();
 
   return (
     <div className="cartContainer">
 
       <div className="productCardsBox">
-        <div className="productCard" id='1'>
+        {products.map((item) =>
+        (<div className="productCard" key={item.id}>
           <div className="cartLeft">
-            <img src={avinas} alt=''></img>
+            <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt=''></img>
           </div>
           <div className="cartRight">
-            <div className="productName">Cotton White T-Shirt</div>
-            <div className="productPrice"> 2 * &#8377; 699</div>
+            <div className="productName">{item.title} </div>
+            <div className="productPrice">{item.productQuantity} x &#8377; {item.price}</div>
+            <div className="removeButton"><button onClick={()=>dispatch(removeItem(item.id))}>Remove Item</button></div>
           </div>
-        </div>
-
-        <div className="productCard" id='2'>
-          <div className="cartLeft">
-            <img src={avinas} alt=''></img>
-          </div>
-          <div className="cartRight">
-          <div className="productName">Supima Men Pant</div>
-            <div className="productPrice"> 5 * &#8377; 699</div>
-          </div>
-        </div>
-
-        <div className="productCard" id='3'>
-          <div className="cartLeft">
-            <img src={avinas} alt=''></img>
-          </div>
-          <div className="cartRight">
-          <div className="productName">Supima Men Pant</div>
-            <div className="productPrice"> 5 * &#8377; 699</div>
-          </div>
-        </div>
-
-        <div className="productCard" id='4'>
-          <div className="cartLeft">
-            <img src={avinas} alt=''></img>
-          </div>
-          <div className="cartRight">
-          <div className="productName">Supima Men Pant</div>
-            <div className="productPrice"> 5 * &#8377; 699</div>
-          </div>
-        </div>
+        </div>))}
       </div>
 
       <div className="checkoutBox">
         <div className="totalPriceCount">
           <div className="subtotal">Subtotal</div>
-          <div className="subtotalCount">&#8377; 2000</div>
+          <div className="subtotalCount">&#8377; {totalPrice()}</div>
         </div>
         <div className="checkoutButton">
           <button>Proceed to Checkout</button>
-          <button>Reset Cart</button>
+          <button onClick={()=>dispatch(resetCart())}>Reset Cart</button>
         </div>
       </div>
 

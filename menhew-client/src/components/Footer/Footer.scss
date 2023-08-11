@@ -1,21 +1,21 @@
 $primaryfont: 'Times New Roman', Times, serif;
 
-.footerContainer{
-    padding: 20px;
+.footerContainer {
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: $primaryfont;
     background-color: rgb(10, 10, 10);
 
-    .footerBox{
+    .footerBox {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
 
-        .footerTop{
+        .footerTop {
             width: 100%;
             height: 100px;
             display: flex;
@@ -23,68 +23,70 @@ $primaryfont: 'Times New Roman', Times, serif;
             justify-content: space-between;
             padding: 20px 0;
 
-            .topLeft{
+            .topLeft {
                 flex: 40%;
-                .menhewLogo{
+
+                .menhewLogo {
                     display: flex;
                     align-items: center;
                     justify-content: left;
 
-                    .link{
+                    .link {
                         text-decoration: none;
                         color: #ffffff;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 10px;
-                        
+
                         img {
                             width: 35px;
                             height: 35px;
                             filter: invert(1);
                         }
-            
+
                         span {
-                            font-family:Georgia, 'Times New Roman', Times, serif ;
+                            font-family: Georgia, 'Times New Roman', Times, serif;
                             font-size: 28px
                         }
                     }
                 }
             }
 
-            .topRight{
+            .topRight {
                 flex: 60%;
                 text-align: right;
             }
 
         }
 
-        .footerBottom{
+        .footerBottom {
             width: 100%;
-            .navLinks{
+
+            .navLinks {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                
-                .link{
+
+                .link {
                     text-decoration: none;
                     color: white;
                 }
             }
 
-            .copyrightDetails{
+            .copyrightDetails {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-            
 
-                .cdRight{
+
+                .cdRight {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     gap: 40px;
-                    
-                    .link{
+
+                    .link {
                         text-decoration: none;
                         color: white;
                     }

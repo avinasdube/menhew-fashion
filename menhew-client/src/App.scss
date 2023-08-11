@@ -1,32 +1,26 @@
-
-$primary : #000000;
-$secondary : #F9EAD9;
-$tertiary : #DE2105;
-
-body{
+body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 
-  .app{
+  .app {
     height: auto;
-    background-color: $primary;
-    color: $secondary;
+    background-color: #000000;
+    color: #F9EAD9;
     font-family: 'system-ui';
   }
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 12px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: transparent;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #0a160f;
   border-radius: 40px;
   border: 3px solid white;
 }
-

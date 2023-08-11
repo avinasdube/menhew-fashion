@@ -14,11 +14,11 @@ const FeaturedProducts = ({ type }) => {
         <div className="featuredContainer">
 
             <div className="productsCardContainer">
-                <input type='radio' name='slider' id='s2' checked></input>
-                <input type='radio' name='slider' id='s3' checked></input>
-                <input type='radio' name='slider' id='s4' checked></input>
-                <input type='radio' name='slider' id='s5' checked></input>
-                <input type='radio' name='slider' id='s1' checked></input>
+                <input type='radio' name='slider' id='s2' checked readOnly></input>
+                <input type='radio' name='slider' id='s3' checked readOnly></input>
+                <input type='radio' name='slider' id='s4' checked readOnly></input>
+                <input type='radio' name='slider' id='s5' checked readOnly></input>
+                <input type='radio' name='slider' id='s1' checked readOnly></input>
 
                 <div className="cards">
                     {isError
@@ -27,15 +27,15 @@ const FeaturedProducts = ({ type }) => {
                             ?
                             <FeaturedProductsLoading />
                             : data?.map((featProduct) => (
-                                <label htmlFor={featProduct.attributes.for} id={featProduct.attributes.productId} key={featProduct.attributes.key}>
+                                <label htmlFor={featProduct?.attributes?.for} id={featProduct?.attributes?.productId} key={featProduct?.attributes?.key}>
                                     <div className="card">
                                         <img src={process.env.REACT_APP_UPLOAD_URL + featProduct.attributes?.img?.data?.attributes?.url} alt=''></img>
-                                        <div className='sCount'>{featProduct.attributes.slideCount}</div>
+                                        <div className='sCount'>{featProduct?.attributes?.slideCount}</div>
                                         <div className="priceSection">
-                                            <Link className='link' to={`/categories/${featProduct.attributes.categories.data[0].attributes.title}/product/${featProduct?.id}`}>
+                                            <Link className='link' to={`/categories/${featProduct?.attributes?.categories?.data[0]?.attributes?.title}/product/${featProduct?.id}`}>
                                                 <button className="uprightSign"><img src={goToIcon} alt=''></img></button>
                                             </Link>
-                                            <div className="price">&#8377; {featProduct.attributes.price}</div>
+                                            <div className="price">&#8377; {featProduct?.attributes?.price}</div>
                                         </div>
                                     </div>
                                 </label>
@@ -46,11 +46,9 @@ const FeaturedProducts = ({ type }) => {
             <div className="specialOfferSection">
                 <div className="offerCard">
                     <div className="titleText">
-                        STYLE MEETS ENERGY
+                        FASHION DEFINES YOU !
                     </div>
-                    <button className="explore">
-                        EXPLORE NOW
-                    </button>
+                    <Link className='link' to='/categories'>EXPLORE NOW</Link>
                 </div>
             </div>
 

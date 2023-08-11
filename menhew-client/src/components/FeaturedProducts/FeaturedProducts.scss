@@ -35,7 +35,6 @@
                     position: relative;
                     width: 280px;
                     height: 440px;
-                    background-color: rgb(22, 20, 20);
                     border-radius: 10px;
 
                     img {
@@ -102,10 +101,20 @@
                         }
                     }
                 }
+
+                // LOADING CARD SCREEN
+
+                .cardLoad {
+                    position: relative;
+                    width: 280px;
+                    height: 440px;
+                    background-color: rgb(22, 20, 20);
+                    border-radius: 10px;
+                }
             }
 
             label:hover {
-                filter: brightness(0.9);
+                filter: brightness(1.06);
             }
         }
     }
@@ -155,42 +164,49 @@
         transform: translate3d(140%, 0, -220px);
     }
 
-    .specialOfferSection{
+    .specialOfferSection {
         width: 30%;
         padding: 20px;
 
-        .offerCard{
+        .offerCard {
             height: 100%;
             display: flex;
             justify-content: center;
             flex-direction: column;
             gap: 40px;
 
-            .titleText{
+            .titleText {
                 display: flex;
                 flex-direction: column;
-                font-size: 100px;
-                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                text-shadow: 10px 10px #0a160f;
-                color: rgb(169, 118, 0);
-                border: 4px solid #0a160f;
+                font-size: 80px;
+                font-style: italic;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-shadow: 6px 6px #0a160f;
+                color: #a97600;
                 background-color: whitesmoke;
                 padding: 20px;
                 border-radius: 10px;
+                transform: rotate(-5deg);
             }
 
-            button{
+            .link {
+                text-decoration: none;
+                color: black;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border: none;
-                padding: 20px 10px;
+                padding: 20px 6px;
                 border-radius: 10px;
                 box-shadow: 4px 4px #0a160f;
                 font-size: 20px;
                 font-weight: bold;
+                transform: rotate(-5deg);
+            }
+
+            .link:hover {
+                background-color: firebrick;
             }
         }
     }
-
 }
