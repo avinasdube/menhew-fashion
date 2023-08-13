@@ -1,15 +1,21 @@
-## Menhew Fashion
+<div align="center">
+  <img width="60" alt="Screenshot 2022-10-15 at 1 19 54 PM" src="https://github.com/avinasdube/weather.in/blob/main/public/weatherIn.png">
 
-Menhew Fashion is an E-Commerce application based on MERN stack that is primarily developed to sell Men & Kids fashion items. It consists almost all features of a modern e-commerce application.
+  # Menhew Fashion
+    Designed & Developed By - Avinash Dubey
 
-### `Features` :
+  
+#### An E-Commerce application for Men Fashion and Clothing with beautiful UI and UX. It has all the necessary features offered by a usual E-Commerce application like Amazon.com and Flipkart.com. It's a MERN stack project. 
 
-1. Signup/Signin
-2. View a product
-3. Select product quantity and size
-4. Add to cart
-5. Remove from cart
-6. Add to favourites
-7. Search a product
-8. Payment processing
+#  सर्वं सम्भाव्यते त्वयि । 🚩
+
+##
+  
+# Screenshots from the Working Application
+ 
+  <img alt="Screenshot 2022-10-15 at 1 19 54 PM" src="https://github.com/avinasdube/project-screenshots/blob/main/weather.in/screenshots/WTHRIN1.jpg"> 
+  
+##
+  
+  <img alt="Screenshot 2022-10-15 at 1 19 54 PM" src="https://github.com/avinasdube/project-screenshots/blob/main/weather.in/screenshots/WTHRIN2.jpg">
 
