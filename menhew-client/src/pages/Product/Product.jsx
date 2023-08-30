@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Product.scss';
 
-
 import addToCartIcon from '../../assets/icons/addtocart.png';
 import addToFavouriteIcon from '../../assets/icons/favourite.png';
 import { useParams } from 'react-router-dom';
@@ -21,10 +20,10 @@ const Product = () => {
     const [viewImg, setViewImg] = useState("img");
 
     const [productQuantity, setProductQuantity] = useState(1);
-
+    const [size, setSize] = useState(null);
 
     const dispatch = useDispatch();
-
+ 
     return (
         <div className="singleProductContainer">
 
@@ -73,22 +72,25 @@ const Product = () => {
                                 <div className="selectSize">
                                     <div className="selectSizeHeading">Select Size</div>
                                     <div className="sizeButtons">
-                                        <button>S</button>
-                                        <button>M</button>
-                                        <button>L</button>
-                                        <button>XL</button>
-                                        <button>2XL</button>
-                                        <button>3XL</button>
+                                        <button onClick={()=>setSize('S')}>S</button>
+                                        <button onClick={()=>setSize('M')}>M</button>
+                                        <button onClick={()=>setSize('L')}>L</button>
+                                        <button onClick={()=>setSize('XL')}>XL</button>
+                                        <button onClick={()=>setSize('2XL')}>2XL</button>
+                                        <button onClick={()=>setSize('3XL')}>3XL</button>
                                     </div>
                                 </div>
 
                                 <div className="actionButtons">
+                                    {/* using dispatch() to send the details of selected product on clicking addToCart button */}
+                                    
                                     <button className="addToCart" onClick={()=>dispatch(addToCart({
                                         id: data.id,
                                         title: data.attributes.title,
                                         desc: data.attributes.descrip,
                                         img: data.attributes.img.data.attributes.url,
                                         price: data.attributes.price,
+                                        productSize: size,
                                         productQuantity
                                     }))}> <img src={addToCartIcon} alt=''></img>Add to Cart</button>
                                     <button className="addToFavourite"><img src={addToFavouriteIcon} alt=''></img>Add to Favourites</button>
