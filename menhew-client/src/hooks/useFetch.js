@@ -1,3 +1,6 @@
+// a custom hook to fetch data from the database based on 
+// provided (url)
+
 import { useEffect, useState } from "react"
 import { makeRequest } from "../makeRequest";
 
